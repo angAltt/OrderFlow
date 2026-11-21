@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+.loadingRow td {
+  padding: $space-4;
+}
+
+.bar {
+  display: block;
+  height: 0.7rem;
+  max-width: 8rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, $surface-alt, $line, $surface-alt);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-7 $space-5;
+  text-align: center;
+}
+
+.title {
+  font-weight: 650;
+  color: $ink;
+}
+
+.message {
+  max-width: 32rem;
+  font-size: $text-sm;
+  color: $muted;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  padding: $space-3 $space-4;
+  border: 1px solid rgba($danger, 0.3);
+  border-radius: $radius-md;
+  background: $danger-bg;
+  color: $danger;
+  font-size: $text-sm;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

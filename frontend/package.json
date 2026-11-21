@@ -1,0 +1,32 @@
+{
+  "name": "orderflow-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OrderFlow dashboard: Next.js (App Router), Redux Toolkit and Sass",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@reduxjs/toolkit": "^2.15.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-redux": "^9.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "prettier": "^3.10.1",
+    "sass": "^1.108.2"
+  }
+}

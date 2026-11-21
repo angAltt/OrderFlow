@@ -1,0 +1,195 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.page {
+  min-height: 100vh;
+
+  @include up($bp-lg) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+}
+
+// Left: what the app is
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  padding: $space-5 $space-5 $space-7;
+  background: $ink;
+  color: #c9d4de;
+
+  @include up($bp-lg) {
+    justify-content: space-between;
+    padding: $space-6 $space-7 $space-7 * 1.5;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  color: #fff;
+  font-size: $text-lg;
+  font-weight: 700;
+}
+
+.pitch {
+  max-width: 34rem;
+
+  h1 {
+    @include condensed(750);
+    color: #fff;
+    font-size: $text-2xl;
+    line-height: 1.05;
+
+    @include up($bp-md) {
+      font-size: 3.25rem;
+    }
+  }
+
+  p {
+    margin-top: $space-4;
+    max-width: 30rem;
+    line-height: 1.6;
+  }
+}
+
+.roles {
+  display: none;
+  margin: 0;
+
+  @include up($bp-lg) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-5;
+    max-width: 34rem;
+  }
+
+  dt {
+    color: #fff;
+    font-weight: 650;
+  }
+
+  dd {
+    margin: $space-1 0 0;
+    font-size: $text-sm;
+    color: #93a4b5;
+  }
+}
+
+.tape {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.75rem;
+  @include hazard-stripes(14px);
+}
+
+// Right: how to get in
+.panel {
+  display: grid;
+  place-items: center;
+  padding: $space-6 $space-4;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.title {
+  font-size: $text-xl;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: $space-1;
+  color: $muted;
+}
+
+.demoButton {
+  margin-top: $space-5;
+}
+
+.viewerLink {
+  align-self: center;
+  margin-top: $space-3;
+  padding: $space-1;
+  border: 0;
+  background: none;
+  color: $ink-soft;
+  font-size: $text-sm;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover:not(:disabled) {
+    color: $ink;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.serverNote {
+  margin-top: $space-4;
+  padding: $space-3;
+  border-radius: $radius-sm;
+  background: $amber-wash;
+  color: $amber-ink;
+  font-size: $text-sm;
+}
+
+.demoNote {
+  margin-top: $space-3;
+  font-size: $text-xs;
+  color: $muted;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin: $space-6 0 $space-4;
+  font-size: $text-xs;
+  color: $muted;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $line;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.notice,
+.error {
+  margin-bottom: $space-4;
+  padding: $space-3;
+  border-radius: $radius-sm;
+  font-size: $text-sm;
+}
+
+.notice {
+  background: $amber-wash;
+  color: $amber-ink;
+}
+
+.error {
+  background: $danger-bg;
+  color: $danger;
+}

@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+@mixin up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin down($breakpoint) {
+  @media (max-width: ($breakpoint - 1px)) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid $focus;
+  outline-offset: 2px;
+}
+
+@mixin condensed($weight: 650) {
+  font-stretch: $stretch-condensed;
+  font-weight: $weight;
+  letter-spacing: -0.01em;
+}
+
+@mixin panel {
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius-md;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Diagonal "safety tape" stripes, used only for stock alerts
+@mixin hazard-stripes($size: 10px) {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    $amber 0,
+    $amber $size,
+    $ink $size,
+    $ink $size * 2
+  );
+}

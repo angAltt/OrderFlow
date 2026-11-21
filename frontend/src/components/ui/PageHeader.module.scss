@@ -1,0 +1,31 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: $space-4;
+  margin-bottom: $space-5;
+}
+
+.title {
+  @include condensed(700);
+  font-size: $text-2xl;
+
+  @include up($bp-lg) {
+    font-size: $text-3xl;
+  }
+}
+
+.description {
+  margin-top: $space-1;
+  max-width: 40rem;
+  color: $muted;
+}
+
+.actions {
+  display: flex;
+  gap: $space-3;
+}

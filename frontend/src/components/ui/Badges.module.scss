@@ -1,0 +1,69 @@
+@use 'variables' as *;
+
+// Order status: a shipping tag with a pointed end and a punched hole
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 1.5rem;
+  padding: 0 0.6rem 0 0.85rem;
+  clip-path: polygon(0.45rem 0, 100% 0, 100% 100%, 0.45rem 100%, 0 50%);
+  border-radius: 0 $radius-sm $radius-sm 0;
+  font-size: $text-xs;
+  font-weight: 650;
+  white-space: nowrap;
+
+  &::before {
+    content: '';
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background: $surface;
+  }
+}
+
+.pending {
+  background: $status-pending-bg;
+  color: $status-pending;
+}
+
+.shipped {
+  background: $status-shipped-bg;
+  color: $status-shipped;
+}
+
+.delivered {
+  background: $status-delivered-bg;
+  color: $status-delivered;
+}
+
+.cancelled {
+  background: $status-cancelled-bg;
+  color: $status-cancelled;
+}
+
+// Stock level: a flat label with a colored edge
+.stock {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-left: 3px solid currentColor;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  font-size: $text-xs;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.stock-ok {
+  background: $stock-ok-bg;
+  color: $stock-ok;
+}
+
+.stock-low {
+  background: $stock-low-bg;
+  color: $stock-low;
+}
+
+.stock-out {
+  background: $stock-out-bg;
+  color: $stock-out;
+}

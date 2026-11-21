@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+.region {
+  position: fixed;
+  right: $space-5;
+  bottom: $space-5;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  width: min(22rem, calc(100vw - #{$space-5 * 2}));
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  background: $ink;
+  color: #fff;
+  font-size: $text-sm;
+  box-shadow: $shadow-modal;
+  animation: enter 0.2s ease-out;
+
+  p {
+    flex: 1;
+  }
+
+  button {
+    display: grid;
+    place-items: center;
+    padding: 2px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.success {
+  border-left: 4px solid #5fc48a;
+}
+
+.error {
+  border-left: 4px solid #f07167;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}

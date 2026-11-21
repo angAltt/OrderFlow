@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  min-height: 100vh;
+  padding: $space-5;
+  text-align: center;
+}
+
+.code {
+  @include condensed(800);
+  font-size: 5rem;
+  line-height: 1;
+  color: $ink;
+}
+
+.link {
+  margin-top: $space-3;
+  font-weight: 600;
+  color: $focus;
+}

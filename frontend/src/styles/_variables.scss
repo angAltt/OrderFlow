@@ -1,0 +1,78 @@
+// Design tokens. Every module imports this file with `@use 'variables' as *;`
+
+// Palette: warehouse navy, cool surfaces, and one amber "safety tape" accent
+// that is reserved for things that need attention (low stock).
+$ink: #17283a; // sidebar, headings
+$ink-hover: #243c54;
+$ink-soft: #3d5166; // body text on light backgrounds
+$muted: #6b7c8f; // secondary text
+$line: #dbe2e8; // borders and dividers
+$line-strong: #b4c0cb; // hover borders
+$canvas: #eef2f5; // app background
+$surface: #ffffff;
+$surface-alt: #f6f8fa; // table headers, hover rows
+
+$amber: #f0a81c; // attention accent
+$amber-hover: #f5b93e;
+$amber-ink: #6b4500; // text on amber
+$amber-wash: #fff4dc;
+
+$focus: #2f6fd1;
+
+// Order status colors (shipping tag look)
+$status-pending: #9a6400;
+$status-pending-bg: #fff1d6;
+$status-shipped: #1f5fae;
+$status-shipped-bg: #e3eefb;
+$status-delivered: #23764a;
+$status-delivered-bg: #e1f3e8;
+$status-cancelled: #8a3a3a;
+$status-cancelled-bg: #f6e5e5;
+
+// Stock levels
+$stock-ok: $status-delivered;
+$stock-ok-bg: $status-delivered-bg;
+$stock-low: $amber-ink;
+$stock-low-bg: $amber-wash;
+$stock-out: #a12d2d;
+$stock-out-bg: #fbe3e3;
+
+$danger: #b42318;
+$danger-hover: #981d14;
+$danger-bg: #fdecea;
+
+// Typography
+$font-sans: 'Archivo Variable', 'Helvetica Neue', Arial, sans-serif;
+$font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.5rem;
+$text-2xl: 2rem;
+$text-3xl: 2.625rem;
+
+// Condensed width used for figures and page titles
+$stretch-condensed: 78%;
+
+// Spacing scale (4px base)
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.5rem;
+$space-6: 2rem;
+$space-7: 3rem;
+
+// Shape. Containers are squarer than controls on purpose.
+$radius-sm: 4px; // inputs, buttons, tags
+$radius-md: 6px; // panels, modals
+
+$shadow-modal: 0 20px 50px rgba(23, 40, 58, 0.25);
+
+// Layout
+$sidebar-width: 15rem;
+$content-max: 75rem;
+$bp-md: 768px;
+$bp-lg: 1024px;

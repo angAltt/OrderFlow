@@ -1,0 +1,205 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.shell {
+  min-height: 100vh;
+
+  @include up($bp-lg) {
+    display: grid;
+    grid-template-columns: $sidebar-width 1fr;
+    // Paints the sidebar column to the bottom on long pages
+    background: linear-gradient(to right, $ink $sidebar-width, transparent $sidebar-width);
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3 $space-4;
+  padding: $space-3 $space-4;
+  background: $ink;
+  color: #c9d4de;
+
+  @include up($bp-lg) {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: $space-6;
+    padding: $space-5 $space-4;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-3;
+  color: #fff;
+  font-size: $text-lg;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+
+  @include up($bp-lg) {
+    padding: 0 $space-2;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: $space-1;
+  order: 3;
+  width: 100%;
+  overflow-x: auto;
+
+  @include up($bp-lg) {
+    order: 0;
+    flex-direction: column;
+    overflow: visible;
+  }
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+  padding: $space-2 $space-3;
+  border-radius: $radius-sm;
+  color: #c9d4de;
+  font-size: $text-sm;
+  font-weight: 550;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+  }
+
+  &:focus-visible {
+    outline-color: $amber;
+  }
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: inset 3px 0 0 $amber;
+}
+
+.alertCount {
+  min-width: 1.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: $radius-sm;
+  background: $amber;
+  color: $ink;
+  font-size: $text-xs;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  margin-left: auto;
+
+  @include up($bp-lg) {
+    flex-direction: column;
+    align-items: stretch;
+    margin: auto 0 0;
+    padding-top: $space-4;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+.user {
+  display: none;
+
+  @include up($bp-lg) {
+    display: block;
+    padding: 0 $space-2;
+  }
+}
+
+.userName {
+  color: #fff;
+  font-size: $text-sm;
+  font-weight: 600;
+}
+
+.userRole {
+  font-size: $text-xs;
+  color: #93a4b5;
+}
+
+.demo {
+  display: none;
+
+  @include up($bp-lg) {
+    display: block;
+    padding: $space-2;
+    border-radius: $radius-sm;
+    background: rgba($amber, 0.12);
+    color: #f3cf86;
+    font-size: $text-xs;
+    line-height: 1.4;
+  }
+}
+
+.logout {
+  padding: $space-2 $space-3;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: $radius-sm;
+  background: transparent;
+  color: #fff;
+  font-size: $text-sm;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &:focus-visible {
+    outline-color: $amber;
+  }
+}
+
+.main {
+  min-width: 0;
+  padding: $space-5 $space-4 $space-7;
+
+  @include up($bp-md) {
+    padding: $space-6 $space-6 $space-7;
+  }
+}
+
+.content {
+  max-width: $content-max;
+  margin: 0 auto;
+}
+
+// Shown while the stored session is read
+.boot {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.bootMark {
+  width: 2.5rem;
+  height: 0.4rem;
+  border-radius: 2px;
+  @include hazard-stripes(6px);
+  background-size: 200% 100%;
+  animation: slide 0.8s linear infinite;
+}
+
+@keyframes slide {
+  to {
+    background-position: -24px 0;
+  }
+}

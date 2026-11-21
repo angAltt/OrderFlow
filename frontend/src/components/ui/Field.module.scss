@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  min-width: 0;
+}
+
+.label {
+  font-size: $text-sm;
+  font-weight: 600;
+  color: $ink;
+}
+
+.control {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: $space-2 $space-3;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  background: $surface;
+  font-size: $text-sm;
+  color: $ink;
+
+  &::placeholder {
+    color: $muted;
+  }
+
+  &:hover {
+    border-color: $line-strong;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $focus;
+    outline-offset: 0;
+    border-color: $focus;
+  }
+}
+
+textarea.control {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.invalid {
+  border-color: $danger;
+}
+
+.hint {
+  font-size: $text-xs;
+  color: $muted;
+}
+
+.error {
+  font-size: $text-xs;
+  color: $danger;
+}
