@@ -1,0 +1,76 @@
+### OrderFlow API - request collection
+### Works with the VS Code "REST Client" extension or JetBrains HTTP Client.
+
+@baseUrl = http://localhost:4000/api
+
+### Health check
+GET {{baseUrl}}/health
+
+### Login as admin (copy the token into @token below)
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{ "email": "admin@orderflow.dev", "password": "Admin123!" }
+
+###
+@token = {{login.response.body.data.token}}
+
+### Current user
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{token}}
+
+### Dashboard KPIs
+GET {{baseUrl}}/dashboard/stats
+Authorization: Bearer {{token}}
+
+### Products (search + low stock)
+GET {{baseUrl}}/products?search=usb&sortBy=stock&order=asc
+Authorization: Bearer {{token}}
+
+### Low-stock products only
+GET {{baseUrl}}/products?lowStock=true
+Authorization: Bearer {{token}}
+
+### Create product
+POST {{baseUrl}}/products
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "sku": "ACC-010", "name": "USB Cable", "price": 9.99, "stock": 50, "category": "Accessories" }
+
+### Update stock and price
+PATCH {{baseUrl}}/products/3
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "stock": 25, "price": 37.90 }
+
+### Orders filtered by status
+GET {{baseUrl}}/orders?status=Pending
+Authorization: Bearer {{token}}
+
+### Order detail
+GET {{baseUrl}}/orders/1
+Authorization: Bearer {{token}}
+
+### Create order (deducts stock in a transaction)
+POST {{baseUrl}}/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "customerName": "Grace Lee",
+  "customerEmail": "grace@example.com",
+  "items": [
+    { "productId": 1, "quantity": 2 },
+    { "productId": 4, "quantity": 1 }
+  ]
+}
+
+### Update order status
+PATCH {{baseUrl}}/orders/1/status
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "status": "Shipped" }
