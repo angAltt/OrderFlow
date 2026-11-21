@@ -1,10 +1,10 @@
 # OrderFlow: Inventory & Order Management Dashboard
 
-![Node](https://img.shields.io/badge/node-%3E%3D22-339933?logo=node.js&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
-![Redux](https://img.shields.io/badge/Redux_Toolkit-2-764ABC?logo=redux&logoColor=white)
-![License](https://img.shields.io/badge/license-MIT-blue)
+[![Node](https://img.shields.io/badge/node-%3E%3D22-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![Redux](https://img.shields.io/badge/Redux_Toolkit-2-764ABC?logo=redux&logoColor=white)](https://redux-toolkit.js.org)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 Full-stack app to manage products, stock and customer orders, with role-based access and a KPI dashboard.
 
